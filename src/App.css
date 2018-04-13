@@ -1,45 +1,64 @@
-.App {
-  text-align: center;
-}
-
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: rgb(26, 24, 114);
-  height: 190px;
-  padding: 20px;
-  color: white;
-  align-content: center
-  ;
-}
-
-.left-align {
-  text-align: left;
-}
-.center-align {
-  text-align: center;
-}
-.right-align {
-  text-align: right;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-.center {
-  text-align: center;
+body {
+  color: #000000;
+  background-image: linear-gradient(-184deg, #404488 0%, #242536 50%);
+  background-repeat: no-repeat;
+  background-color: #242536;
+ 
 
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.blockchain-bg {
+  background-image: url('assets/img/bg.png');
+  background-repeat: no-repeat;
+
+  background-position: top;
+  padding-top: 10px;
+
+}
+
+.row {
+  margin-top: 5px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #1EAEDB !important;
+  border-color: #1EAEDB !important;
+}
+
+.card {
+  max-width: 18%;
+  min-width: 250px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.card-text {
+  max-height: 100px;
+  text-overflow: ellipsis;
+  line-height: normal;
+  text-overflow: ellipsis;
+  font-size: 10px;
+
+}
+
+.cnfont {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+.card-img-top{
+  max-height: 150px;
+}
+#card_flex
+{
+
+
+}
+#newscontainter
+{
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  display: none;
+
+
 }
