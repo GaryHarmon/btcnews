@@ -17,7 +17,9 @@ class App extends Component {
         </header>
 
         <div >
-       <DashboardPage ></DashboardPage>
+       <DashboardPage >
+         
+       </DashboardPage>
        
        </div>
       
