@@ -13,6 +13,7 @@ class App extends Component {
         <div class="container-fluid">
 
           <NinjaHeader></NinjaHeader>
+          <br>
 
           <DashboardPage ></DashboardPage>
         </div>
