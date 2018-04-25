@@ -44,7 +44,7 @@ export default class LatestNews extends React.Component {
   renderArticles(articles) {
     
     if (articles && articles.length) {
-      let sliced = articles.slice(0, 6)
+      let sliced = articles
       
       return sliced.map((article, index) => <Article article={article} thumb={article.thumb || null} key={index}/>)
     } else {
@@ -56,11 +56,14 @@ export default class LatestNews extends React.Component {
     
     return (
       
-      <div > 
-      <div className="box type_latest_news">
-        {this.renderArticles(this.state.articles)}
-      </div>
-      </div>
+      <div className="container-fluid " id="newscontainter" >
+            <div className="d-flex flex-wrap justify-content-center " style={{flexDirection: "row"}} id="card_flex">
+{this.renderArticles(this.state.articles)}
+
+            </div>
+
+        </div>
+     
       
     )
   }
