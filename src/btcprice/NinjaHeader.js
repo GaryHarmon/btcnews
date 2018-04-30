@@ -4,6 +4,8 @@ import Highlow from '../btcprice/Highlow'
 
 import {Col, Row} from 'react-bootstrap'
 import Coinlogo from '../images/coin-logo.png'
+
+
 export default class Header extends React.Component {
     render() {
         return (
@@ -13,7 +15,7 @@ export default class Header extends React.Component {
                         className="logo"
                         src={Coinlogo}
                         style={{
-                maxHeight: "75%", paddingLeft: "28px", paddingTop: "11px", paddingBottom: "7px"
+                maxHeight: "75%", paddingLeft: "28px", paddingTop: "20px", paddingBottom: "7px"
                 
             }} />
                     </div>

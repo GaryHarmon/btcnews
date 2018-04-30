@@ -16,7 +16,7 @@ class App extends Component {
         <Row>
           <Col >
           <NinjaHeader></NinjaHeader>
-          <NavHead></NavHead>
+          
           <LatestNews></LatestNews>
           </Col>
         </Row>

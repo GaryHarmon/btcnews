@@ -1,4 +1,5 @@
 import React from 'react'
+
 export default class Article extends React.Component {
   constructor() {
     super()
@@ -58,31 +59,21 @@ export default class Article extends React.Component {
     //   "new_time": "51 minutes ago",
     //   "num": 2
     // }
-    if (article) {
-      return (
-        <div className="news_articles__wrapper">
+   
+   if (article2){
 
-          <div className="news_articles__desc">
-            <img
-              src={require(`../../images/news/${article.thumb}`)}
-              alt={article.source}
-              style={{
-              width: "79px",
-              height: "75px"
-            }}/>
-            <div className="news_articles__title">
-              <a href={article.link} rel="nofollow" target="_blank">{article.title}</a>
-            </div>
-          </div>
-          <div style={{
-            clear: "both"
-          }}></div>
-        </div>
-      )
-    } else if (article2) {
+   
       return (
         <div className="card mb-4 box-shadow">
-          <div className="card-body">
+          <div className="card-body  text-center">
+          <img
+              src={require(`../../images/news/${article2.thumb}`)}
+              alt={article2.source}
+              style={{
+              width: "158px",
+              height: "150px",
+              
+            }}/>
             <h6 className="card-title" id="newstitle' + id + '">{article2.title}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>
@@ -102,7 +93,7 @@ export default class Article extends React.Component {
                   id={`newshidebutton${article2.id}`}
                   newsid={article2.id}
                   role="button"
-                  className=" hide-button btn btn-sm btn-secondary">X
+                  className=" hide-button btn btn-sm btn-secondary"> X
                 </button>
               </div>
             </div>
@@ -117,8 +108,10 @@ export default class Article extends React.Component {
             </div >
           </div>
         </div>
-      )} else {
-      return null;
+      )
+    } else{
+      return null
     }
   }
-}
+    
+    }
