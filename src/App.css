@@ -6,19 +6,14 @@ body {
  
 
 }
-
+.blockchain-bg .white {
+  background-color: white !important;
+}
 .blockchain-bg {
-  background-image: url('images/bg.png');
-  background-repeat: no-repeat;
-
-  background-position: top;
-  padding-top: 10px;
-
+  background-color: #efefef
 }
 
-.row {
-  margin-top: 5px;
-}
+
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #1EAEDB !important;
@@ -59,6 +54,47 @@ body {
   justify-content: center;
   margin-top: 30px;
   
-
-
+}
+.header-bg {
+  
+  background-blend-mode: darken;
+  background-image: linear-gradient(#242536, #242536);
+  background-image: linear-gradient(var(--dark), var(--dark));
+}
+.Logo {
+  padding-left: 28px;
+  padding-top: 11px;
+  padding-bottom: 7px;
+}
+.layer {
+  padding-top: 25px;
+  padding-bottom: 15px;
+ font-family: Montserrat; 
+  font-size: 34px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #7ed321;
+}
+.high-low{
+  padding-top: 25px; padding-right: 19px
+}
+.Rectangle-4 {
+  width: 82px;
+  height: 25px;
+  object-fit: contain;
+  border-radius: 5.1px;
+  background-color: #7ed321;
+}
+.container { 
+  padding: 0px;
+}
+.blockchain-bg.container-fluid {
+  padding-right:0;
+  padding-left:0;
+  margin-right:auto;
+  margin-left:auto
 }
