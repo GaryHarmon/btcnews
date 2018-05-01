@@ -77,35 +77,39 @@ export default class Article extends React.Component {
             <h6 className="card-title" id="newstitle' + id + '">{article2.title}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>
-          </div>
-          < div className="card-footer">
-            <div className=" justify-content-between  align-text-bottom h-100  row">
-              <div className="col-6">
-                <a
+            <div className="align-left">
+            <a 
                   href={article2.link}
                   id={`newslink ${article2.id}`}
                   target="_blank"
                   role="button"
-                  className="btn btn-sm btn-success">View</a>
-              </div>
+                  className="">Read More</a>
+                  </div>
+          </div>
+          < div className="card-footer">
+            <div className=" justify-content-between  align-text-bottom h-100  row">
+              
+              
+              < div className="col-6 text-left">
+              <small className="text-muted">{article2.source}</small>
+            </div >
               <div className="col-6 text-right">
                 <button
                   id={`newshidebutton${article2.id}`}
                   newsid={article2.id}
                   role="button"
-                  className=" hide-button btn btn-sm btn-secondary"> X
+                  className=" hide-button btn btn-sm btn-secondary"> x
                 </button>
               </div>
+              
             </div>
             < div className="row">
-              <div className="col-6">
+              <div className="col-12 text-center">
                 <small className="text-muted" id={`newsnewtime ${article2.id}`}>
                   {article2.pub_time}</small>
               </div>
             </div>
-            < div className="col-6 text-right">
-              <small className="text-muted">{article2.source}</small>
-            </div >
+            
           </div>
         </div>
       )
