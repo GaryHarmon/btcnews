@@ -1,10 +1,12 @@
 import React from 'react';
-import PriceHead from '../btcprice/PriceHead'
-import Highlow from '../btcprice/Highlow'
 
-import {Col, Row} from 'react-bootstrap'
+
+
+
 import Coinlogo from '../images/coin-logo.png'
-
+import PriceHigh from "../btcprice/PriceHigh"
+import PriceLow from "../btcprice/PiceLow"
+import CurrentPrice from "../btcprice/CurrentPrice"
 
 export default class Header extends React.Component {
     render() {
@@ -20,13 +22,13 @@ export default class Header extends React.Component {
             }} />
                     </div>
                     <div className="col-md-6 col-xs-12 text-center layer">
-                    <span className="layer">$9,366.66</span>
+                    <span className="layer">$<CurrentPrice></CurrentPrice></span>
                     </div>
 
                     <div className="col-md-3 d-none d-sm-block text-right ">
                         <div className="btn-group high-low">
-                            <a href="#" className="btn btn-md btn-secondary btn-success  " id="highdiv">9,458.64</a>
-                            <a href="#" className="btn btn-md  btn-secondary btn-danger " id="lowdiv">9,124.99</a>
+                            <a href="#" className="btn btn-md btn-secondary btn-success  " id="highdiv">$<PriceHigh></PriceHigh></a>
+                            <a href="#" className="btn btn-md  btn-secondary btn-danger " id="lowdiv">$<PriceLow></PriceLow></a>
                         </div>
 
                     </div>

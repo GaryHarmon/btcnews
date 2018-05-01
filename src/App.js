@@ -7,6 +7,7 @@ import LatestNews from '../src/components/news/LatestNews';
 import NavHead from '../src/containers/Nav/NavHead';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row,Col,Container} from 'reactstrap';
+
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
         
         <Row>
           <Col >
+          
           <NinjaHeader></NinjaHeader>
           
           <LatestNews></LatestNews>
