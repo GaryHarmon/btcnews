@@ -7,7 +7,7 @@ constructor(){
     this.state = {  highPrice: -1 }
 }
 
-componentWillMount(){
+componentDidMount(){
     fetch('https://www.btcsms.com/news/api')
     .then(results => {
        return results.json();

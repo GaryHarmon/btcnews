@@ -7,14 +7,15 @@ export default class Article extends React.Component {
   }
 
   componentDidMount() {
-
-    const article = Object.assign({}, this.props.article);
-
-    article.thumb = this.getThumbFromSource(article.source);
-    if (!article.thumb) {
-      article.thumb = 'btc.png';
+    
+    let article = Object.assign({}, this.props.article);
+    
+    article.noExternalThumb = false;
+    if(article.thumb===""){  
+      article.thumb = this.getThumbFromSource(article.source);
+      article.noExternalThumb = true;
     }
-
+    
     this.setState({article: article});
   }
 
@@ -33,13 +34,42 @@ export default class Article extends React.Component {
     }
 
     if (srcThumbDict[source.toLowerCase()]) {
-
+      
       return srcThumbDict[source.toLowerCase()];
     }
-    return null;
+    return "btc.png";
   }
 
-  componentWillReceiveProps(nextProps) {}
+  componentWillReceiveProps(nextProps) {
+    let article = Object.assign({}, this.props.article);
+    
+    article.noExternalThumb = false;
+    if(article.thumb===""){  
+      article.thumb = this.getThumbFromSource(article.source);
+      article.noExternalThumb = true;
+    }
+    
+    this.setState({article: article});
+  
+  }
+  renderTitle(title){
+    
+    var length = 65;
+    var trimmedString = title.length > length ? 
+    title.substring(0, length - 3) + "..." : 
+    title;
+    return trimmedString;
+  }
+  renderThumb(article){
+    
+    if(article.noExternalThumb===true){
+      
+      return ( <img src={require(`../../images/news/${article.thumb}`)} alt={article.source} />)
+    }else{
+      return (<img src={article.thumb} alt={article.source} style={{height:"79", width: "70"}}/>)
+    }
+  }
+  
 
   render() {
     // IMPORTANT  -   We SHOULD be using the external images when possible. Howver,
@@ -66,14 +96,7 @@ export default class Article extends React.Component {
       return (
         <div className="card mb-4 box-shadow">
           <div className="card-body  text-center">
-          <img
-              src={require(`../../images/news/${article2.thumb}`)}
-              alt={article2.source}
-              style={{
-              width: "158px",
-              height: "150px",
-              
-            }}/>
+          {this.renderThumb(article2)}
             <h6 className="card-title" id="newstitle' + id + '">{article2.title}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>

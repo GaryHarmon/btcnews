@@ -7,7 +7,7 @@ constructor(){
     this.state = {  bidPrice: -1 }
 }
 
-componentWillMount(){
+componentDidMount(){
     fetch('https://www.btcsms.com/news/api')
     .then(results => {
        return results.json();
@@ -17,9 +17,6 @@ componentWillMount(){
       if(!isNaN(data.prices.bid)){
        this.setState({bidPrice: data.prices.bid});
       }
-    
-    
-    
     })
     
     }
@@ -35,11 +32,7 @@ componentWillMount(){
       return bidPrice;
     
     }
-    
-    
     render(){
-    console.log(this);
-    console.log(this.state.bidPrice);
        return(
          <span>
           {this.renderBidPrice(this.state.bidPrice)}
