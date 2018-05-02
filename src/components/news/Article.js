@@ -77,14 +77,16 @@ export default class Article extends React.Component {
             <h6 className="card-title" id="newstitle' + id + '">{article2.title}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>
-            <div className="align-left">
+            <div className="align-left"><h6>
             <a 
                   href={article2.link}
                   id={`newslink ${article2.id}`}
                   target="_blank"
                   role="button"
                   className="">Read More</a>
+                  </h6>
                   </div>
+                  
           </div>
           < div className="card-footer">
             <div className=" justify-content-between  align-text-bottom h-100  row">
