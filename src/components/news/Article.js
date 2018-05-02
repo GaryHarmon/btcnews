@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Oval from "../../images/ovalx.svg"
 export default class Article extends React.Component {
   constructor() {
     super()
@@ -15,7 +15,7 @@ export default class Article extends React.Component {
       article.thumb = this.getThumbFromSource(article.source);
       article.noExternalThumb = true;
     }
-    
+    article.logo = this.getThumbFromSource(article.source);
     this.setState({article: article});
   }
 
@@ -48,7 +48,7 @@ export default class Article extends React.Component {
       article.thumb = this.getThumbFromSource(article.source);
       article.noExternalThumb = true;
     }
-    
+    article.logo = this.getThumbFromSource(article.source)
     this.setState({article: article});
   
   }
@@ -69,7 +69,13 @@ export default class Article extends React.Component {
       return (<img src={article.thumb} alt={article.source} style={{height:"79", width: "70"}}/>)
     }
   }
+  renderLogo(article){
+    
   
+      
+      return ( <img src={require(`../../images/news/newslogos/logo-${article.logo}`)} alt={article.source} />)
+  
+  }
 
   render() {
     // IMPORTANT  -   We SHOULD be using the external images when possible. Howver,
@@ -94,10 +100,10 @@ export default class Article extends React.Component {
 
    
       return (
-        <div className="card mb-4 box-shadow">
+        <div className="card mb-4 box-shadow ninjanews">
           <div className="card-body  text-center">
           {this.renderThumb(article2)}
-            <h6 className="card-title" id="newstitle' + id + '">{article2.title}</h6>
+            <h6 className="card-title2" id="newstitle' + id + '">{article2.title}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>
             <div className="align-left"><h6>
@@ -116,14 +122,16 @@ export default class Article extends React.Component {
               
               
               < div className="col-6 text-left">
-              <small className="text-muted">{article2.source}</small>
+            
+              {this.renderLogo(article2)}
+              
             </div >
               <div className="col-6 text-right">
                 <button
                   id={`newshidebutton${article2.id}`}
                   newsid={article2.id}
                   role="button"
-                  className=" hide-button btn btn-sm btn-secondary"> x
+                  className=" btn-outline-light"> <img src={Oval}/>
                 </button>
               </div>
               

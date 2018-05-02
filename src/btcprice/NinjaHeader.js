@@ -9,6 +9,34 @@ import PriceLow from "../btcprice/PiceLow"
 import CurrentPrice from "../btcprice/CurrentPrice"
 
 export default class Header extends React.Component {
+        constructor(){
+            super()
+            this.state = {
+                bidPrice: -1,
+                highPrice: -1,
+                lowPrice: -1,
+            }
+        }
+        componentDidMount(){
+            fetch('https://www.btcsms.com/news/api')
+            .then(results => {
+               return results.json();
+            }).then(data =>{
+            
+              if(!isNaN(data.prices.bid)){
+               this.setState({bidPrice: data.prices.bid});
+              }
+              if(!isNaN(data.prices.high)){
+                this.setState({highPrice: data.prices.high});
+               }
+              if(!isNaN(data.prices.low)){
+                this.setState({lowPrice: data.prices.low});
+               }
+            })
+            }
+
+
+
     render() {
         return (
             <div className="header-bg">
@@ -22,13 +50,13 @@ export default class Header extends React.Component {
             }} />
                     </div>
                     <div className="col-md-6 col-xs-12 text-center layer">
-                    <span className="layer">$<CurrentPrice></CurrentPrice></span>
+                    <span className="layer">${this.state.bidPrice}</span>
                     </div>
 
                     <div className="col-md-3 d-none d-sm-block text-right ">
                         <div className="btn-group high-low">
-                            <a href="#" className="btn btn-md btn-secondary btn-success  " id="highdiv">$<PriceHigh></PriceHigh></a>
-                            <a href="#" className="btn btn-md  btn-secondary btn-danger " id="lowdiv">$<PriceLow></PriceLow></a>
+                            <a href="#" className="btn btn-md btn-secondary btn-success  " id="highdiv">${this.state.highPrice}</a>
+                            <a href="#" className="btn btn-md  btn-secondary btn-danger " id="lowdiv">${this.state.lowPrice}</a>
                         </div>
 
                     </div>
