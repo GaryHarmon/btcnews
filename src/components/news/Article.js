@@ -54,9 +54,9 @@ export default class Article extends React.Component {
   }
   renderTitle(title){
     
-    var length = 65;
+    var length = 100;
     var trimmedString = title.length > length ? 
-    title.substring(0, length - 3) + "..." : 
+    title.substring(0,  length -3) + "..." : 
     title;
     return trimmedString;
   }
@@ -103,7 +103,7 @@ export default class Article extends React.Component {
         <div className="card mb-4 box-shadow ninjanews">
           <div className="card-body  text-center">
           {this.renderThumb(article2)}
-            <h6 className="card-title2" id="newstitle' + id + '">{article2.title}</h6>
+            <h6 className="card-title2" id="newstitle' + id + '">{this.renderTitle(article2.title)}</h6>
             <p className="card-text " id="newsdesc' + id + '">{article2.desc}
             </p>
             <div className="align-left"><h6>
