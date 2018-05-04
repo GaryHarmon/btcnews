@@ -2,14 +2,12 @@ import React from 'react';
 
 import Article from './Article';
 
-
-
 export default class LatestNews extends React.Component {
   constructor() {
     super()
-    this.state = {};
+    this.state = {packeryOptions: {transitionDuration: 0}};
+    
   }
-
   componentDidMount() {
    
     this.setState({articles: []})
@@ -53,10 +51,19 @@ export default class LatestNews extends React.Component {
   }
 
   render() {
-    
+    let articles = this.state.articles || []
+    var childElements = articles.map(function(element){
+      return (
+           <li className="image-element-class">
+               <img src={element.source} />
+           </li>
+       );
+   });
     return (
       
       <div className="container-fluid " id="newscontainter" >
+      
+      
             <div className="d-flex flex-wrap justify-content-center " style={{flexDirection: "row"}} id="card_flex">
 {this.renderArticles(this.state.articles)}
 

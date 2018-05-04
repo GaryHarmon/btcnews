@@ -21,6 +21,7 @@ export default class Article extends React.Component {
 
   componentWillUnmount() {}
 
+
   getThumbFromSource = (source) => {
     var srcThumbDict = {
       "ccn": "ccn.png",
@@ -76,7 +77,9 @@ export default class Article extends React.Component {
       return ( <img src={require(`../../images/news/newslogos/logo-${article.logo}`)} alt={article.source} />)
   
   }
-
+renderTime(article){
+ 
+}
   render() {
     // IMPORTANT  -   We SHOULD be using the external images when possible. Howver,
     // React create app has a quirk that wont allows us to pull in external urls at
@@ -100,7 +103,8 @@ export default class Article extends React.Component {
 
    
       return (
-        <div className="card mb-4 box-shadow ninjanews">
+       
+       <div className="card mb-4 box-shadow ninjanews">
           <div className="card-body  text-center">
           {this.renderThumb(article2)}
             <h6 className="card-title2" id="newstitle' + id + '">{this.renderTitle(article2.title)}</h6>
@@ -137,14 +141,15 @@ export default class Article extends React.Component {
               
             </div>
             < div className="row">
-              <div className="col-12 text-center">
+              <div className="col-12 text-right">
                 <small className="text-muted" id={`newsnewtime ${article2.id}`}>
-                  {article2.pub_time}</small>
+                  {article2.new_time}</small>
               </div>
             </div>
             
           </div>
         </div>
+       
       )
     } else{
       return null

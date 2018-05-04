@@ -21,12 +21,18 @@ body {
   background-color: #1EAEDB !important;
   border-color: #1EAEDB !important;
 }
-
+.leftb{
+  text-align: left
+  align-bottom
+}
 .card {
   max-width: 18%;
   min-width: 250px;
   margin-left: 5px;
   margin-right: 5px;
+}
+.card img{
+  max-width: 100%;
 }
 .card-title2 {
   font-family: Montserrat;
@@ -64,11 +70,7 @@ body {
 .card-img-top{
   max-height: 150px;
 }
-#card_flex
-{
 
-
-}
 #newscontainter
 {
   align-items: center;
