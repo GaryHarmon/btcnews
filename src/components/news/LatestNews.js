@@ -5,7 +5,7 @@ import Article from './Article';
 export default class LatestNews extends React.Component {
   constructor() {
     super()
-    this.state = {packeryOptions: {transitionDuration: 0}};
+    this.state = {};
     
   }
   componentDidMount() {

@@ -15,6 +15,7 @@ export default class Header extends React.Component {
                 bidPrice: -1,
                 highPrice: -1,
                 lowPrice: -1,
+                hourPrice:-1,
             }
         }
         componentDidMount(){
@@ -32,9 +33,22 @@ export default class Header extends React.Component {
               if(!isNaN(data.prices.low)){
                 this.setState({lowPrice: data.prices.low});
                }
+               console.log()
+               if(!isNaN(data.prices.changes.price.hour)){
+                this.setState({hourPrice: data.prices.changes.price.hour});
+               }
+               
             })
             }
-
+            
+renderPrice(){
+    
+    if (this.state.hourPrice>0){
+        return <span className="layer text-succes">${this.state.bidPrice}</span>
+    }else {
+        return <span className="layer text-danger">${this.state.bidPrice}</span>
+    }
+}
 
 
     render() {
@@ -50,7 +64,7 @@ export default class Header extends React.Component {
             }} />
                     </div>
                     <div className="col-md-6 col-xs-12 text-center layer">
-                    <span className="layer">${this.state.bidPrice}</span>
+                    <span className="layer">{this.renderPrice()}</span>
                     </div>
 
                     <div className="col-md-3 d-none d-sm-block text-right ">
